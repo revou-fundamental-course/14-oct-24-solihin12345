@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Project</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- header --> 
+    <header class="header">
+        <div class="logo"></div>
+
+        <nav class="navbar">
+            <a href="#home-scroll" class="nav-home">Home</a>
+            <a href="#profile-page"  class="nav-profile">Profile</a>
+            <a href="#portofolio-scroll" class="nav-porto">Portofolio</a>
+            <a href="#message-page" class="nav-message">Message</a>
+        </nav>
+    </header>
+
+<!-- main -->
+    <main>
+        <!-- home -->
+        <section class="home-page" id="home-scroll" >
+            <div class="home">
+            <article class="article-home">
+                <!-- Hai Nama di h1 -->
+                <h1>Halo 
+                    <span id="nama-home"> Nama </span>
+                    ,selamat datang di 
+                    <span>My website</span>
+                </h1>
+
+                <p>silakan <span> sampaikan pesan </span>kepada kami</p>
+                <a  id="home-a">Ganti Nama</a>
+            </article>
+            <div class="banner-home">
+                <img src="gambar/banner.png" alt="">
+                <img src="gambar/conpany.jpg" alt="">
+                <img src="gambar/gurun.jpg" alt="">
+                <img src="gambar/jalanan-kota.jpg" alt="">
+                <img src="gambar/kota.jpg" alt="">
+                <a class="button-scrol bst-next">Next</a>
+                <a class="button-scrol bst-back" >Back</a>
+            </div>
+        </div>
+        </section>
+
+
+        <!-- profile -->
+        <section class="profile-page" id="profile-page">
+            <h1 id="profile">My name is Solihin Arpani</h1>
+            <div class="profile">
+                <article class="visi-misi">
+                    
+                    <div class="visi">
+                        <h1>bahasa yang disukai</h1>
+                        <p>PHP, Javascrip, C#, C++</p>
+                    </div>
+                    <div class="misi">
+                        <h1>Pendidikan</h1>
+                        <ol>
+                            <li>
+                               TK Azhariyah
+                            </li>
+                            <li>
+                                SDN 84 Palembang
+                            </li>
+                            <li>
+                               Mts Patra Mandiri Plaju
+                            </li>
+                            <li>
+                               Ma Patra Mandiri Plaju
+                            </li>
+                            <li>
+                                Universitas Bina Darma 
+                            </li>
+                        </ol>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- portofolio -->
+        <section class="porto-page" id="portofolio-scroll">
+            <div class="portofolio">
+                <h1 id="portofolio">Portofolio</h1>
+                <article class="area-left-porto">
+                    <div class="about-porto">
+                        <h1>Project yang telah dikembangkan</h1>
+                        <p>Aplikasi Pengolahan Data Barang</p>
+                    </div>
+
+                    <div class="testimoni-porto">
+                        <h1>Project 2</h1>
+                        <p>
+                        Aplikasi Pendataan Berbasis C#
+                        </p>
+                    </div>
+            </div>
+        </section>
+
+
+
+        <!-- message us -->
+        <section class="message-page" id="message-page">
+
+             <h1 id="message">Message</h1> 
+            <!-- form -->
+            <div class="form">
+
+            <h1> Isi Form</h1>
+
+
+
+
+            <form onsubmit="return validationFrom()" name="message-form">
+             <!-- nama -->
+            <label for="text-nk"> Nama </label>
+            <p>:<input name="full-name" type="text" id="text-nk" required placeholder="Nama"> </p>
+            <br>
+
+            <!-- tanggal lahir-->
+            <label for="date-birth"> Tanggal lahir </label>
+            <p>:<input name="birth-day" type="date" id="date-birth" required placeholder="Tanggal Lahir"> </p>
+
+            <!-- email -->
+            <label for="email"> Gmail</label>
+            <p>:<input name="email" type="email" id="email" required placeholder="Email"> </p>
+
+
+            <!-- kelamin -->
+            <div class="radio">
+            <p >kelamin </p> 
+            <!-- laki laki -->
+            <input type="radio" name="gender" id="kelamin-laki" value="laki-laki" >
+            <label for="kelamin-laki">Pria</label> 
+            <!-- perempuan -->
+            <input type="radio" name="gender" id="kelamin-wanita" value="perempuan">
+            <label for="kelamin-wanita">wanita</label>
+            </div>
+            <!-- kelamin-end -->
+
+            <!-- pesan -->
+            <label for="pesan">Input </label>
+            <br>
+            <textarea name="area" id="pesan"  cols="60" rows="10" placeholder="pesan" > </textarea>
+            <br>
+            <input type="submit" id="submit-message" value="submit" >
+            </div> 
+
+            <!-- kotak isi dari massage -->
+            <div class="value-form">
+                <p>Nama: <span id="sender-full-name"></span> </p>
+                <p>Tanggal Lahir: <span id="sender-birth-date"></span> </p>
+                <p>Email: <span id="sender-email"></span> </p>
+                <p>Jenis Kelamin: <span id="sender-gender"></span> </p>
+                <p> Pesan: <span id="sender-messages"></span> </p>
+            </div>
+        </section>
+
+    </main>
+<!-- footer -->
+    <footer class="footer">
+        <div class="footer-nav">
+        <a href="#home-scroll ">Home</a>
+        <a href="#profile-page">Our Profile</a>
+        <a href="#portofolio-scroll">Portofolio</a>
+        <a href="#message-page">Message us</a>
+        </div>
+        <div class="note">
+            <h1>create by <span>Solihin Arpani</span>|2024</h1>
+        </div>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
