@@ -73,3 +73,46 @@ buttonBanner[1].addEventListener("click",function(){
 
 showIndex(slideIndex)
 
+
+// animasi nama
+let namaElement = document.getElementById("nama-home");
+namaElement.classList.add("animate-name");
+
+// Hilangkan animasi setelah selesai
+setTimeout(() => {
+    namaElement.classList.remove("animate-name");
+}, 1000); // durasi animasi 1 detik
+
+// animasi ketikkan
+// Animasi teks diketik
+const typedText = document.getElementById('typed-text');
+const words = ["Silahkan masukkan nama anda!"];
+let wordIndex = 0;
+let charIndex = 0;
+let currentWord = "";
+let isDeleting = false;
+let typingSpeed = 150;
+
+function type() {
+    currentWord = words[wordIndex];
+
+    if (isDeleting) {
+        charIndex--;
+    } else {
+        charIndex++;
+    }
+
+    typedText.textContent = currentWord.substring(0, charIndex);
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => (isDeleting = true), 1000); // Wait before deleting
+    } else if (isDeleting && charIndex === 0) {
+        wordIndex = (wordIndex + 1) % words.length;
+        isDeleting = false;
+    }
+
+    setTimeout(type, isDeleting ? typingSpeed / 2 : typingSpeed);
+}
+
+document.addEventListener('DOMContentLoaded', type);
+

@@ -27,13 +27,13 @@
             <article class="article-home">
                 <!-- Hai Nama di h1 -->
                 <h1>Halo 
-                    <span id="nama-home"> Nama </span>
-                    ,selamat datang di 
+                    <span id="nama-home"> User </span>
+                    selamat datang di 
                     <span>My website</span>
                 </h1>
 
-                <p>silakan <span> sampaikan pesan </span>kepada kami</p>
-                <a  id="home-a">Ganti Nama</a>
+                <p id="typed-text">silakan <span> masukkan </span>nama anda!</p>
+                <a  id="home-a">Input your name!</a>
             </article>
             <div class="banner-home">
                 <img src="img/gambar1.gif" alt="">
@@ -47,7 +47,12 @@
         </div>
         </section>
 
-
+        <!-- garis hijau -->
+        <svg id="line-animation" width="200" height="200">
+            <line x1="0" y1="100" x2="200" y2="100" stroke="#00ff99" stroke-width="5"></line>
+        </svg>
+        
+        
         <!-- profile -->
         <section class="profile-page" id="profile-page">
             <h1 id="profile">My name is Solihin Arpani</h1>
@@ -82,25 +87,27 @@
             </div>
         </section>
 
-
-        <!-- portofolio -->
+        <!-- portfolio -->
         <section class="porto-page" id="portofolio-scroll">
             <div class="portofolio">
                 <h1 id="portofolio">Portofolio</h1>
-                <article class="area-left-porto">
-                    <div class="about-porto">
-                        <h1>Project yang telah dikembangkan</h1>
+                <div class="projects">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <img src="img/project1.png" alt="Project 1" class="project-image">
+                        <h2>Project 1</h2>
                         <p>Aplikasi Pengolahan Data Barang</p>
                     </div>
-
-                    <div class="testimoni-porto">
-                        <h1>Project 2</h1>
-                        <p>
-                        Aplikasi Pendataan Berbasis C#
-                        </p>
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <img src="img/project2.png" alt="Project 2" class="project-image">
+                        <h2>Project 2</h2>
+                        <p>Aplikasi Pendataan Berbasis C#</p>
                     </div>
+                </div>
             </div>
         </section>
+        
 
 
 

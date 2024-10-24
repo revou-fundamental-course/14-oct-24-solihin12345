@@ -186,33 +186,84 @@ a#home-a:hover {
 }
 
 /* Portfolio Section */
+/* Portofolio Section */
 .porto-page {
-    padding: 100px 20px;
+    padding: 50px 0;
+    background-color: #1a1a1a;
+    color: #fff;
     text-align: center;
-    background-color: #121212;
 }
 
-.porto-page h1 {
-    font-size: 40px;
+#portofolio {
+    font-size: 3rem;
     color: #00ffcc;
-    margin-bottom: 40px;
+    text-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
+    margin-bottom: 30px;
 }
 
-.about-porto, .testimoni-porto {
-    background-color: #1f1f1f;
-    padding: 30px;
-    margin: 20px 0;
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Styling for Project Card */
+.project-card {
+    background-color: #333;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
-    transition: box-shadow 0.3s ease;
+    padding: 20px;
+    width: 90%;
+    max-width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: left;
 }
 
-.about-porto:hover, .testimoni-porto:hover {
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+.project-card h2 {
+    font-size: 1.5rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #e6e6e6;
+}
+
+/* Styling for Project Image */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 255, 204, 0.5);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 255, 204, 0.5);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
 }
 
 
 
+/* message */
 #submit-message {
     background-color: #00ffcc;
     color: #121212;
@@ -370,3 +421,25 @@ a#home-a:hover {
     font-size: 14px;
 }
 
+/* animasi garis */
+.animate-name {
+    animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#line-animation line {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawLine 2s forwards;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
