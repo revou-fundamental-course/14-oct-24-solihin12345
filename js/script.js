@@ -116,3 +116,41 @@ function type() {
 
 document.addEventListener('DOMContentLoaded', type);
 
+// Add scroll event listener
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+  
+
+  // Scroll effect for profile name
+window.addEventListener('scroll', function() {
+    const profileName = document.querySelector('.profile-name');
+    const profilePosition = profileName.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.5;
+  
+    if (profilePosition < screenPosition) {
+      profileName.classList.add('fade-in');
+    }
+  });
+  
+  // Add CSS for fade-in effect
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+  
+    .profile-name {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  `;
+  document.head.appendChild(style);
+  

@@ -13,52 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Header */
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1f1f1f;
-    padding: 20px 40px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.navbar a {
-    color: #f0f0f0;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    position: relative;
-    transition: color 0.3s;
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: #00ffcc;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-.navbar a:hover::before {
-    visibility: visible;
-    width: 100%;
-}
-
-.navbar a:hover {
-    color: #00ffcc;
-}
-
-.logo {
-    background-image: url('../img/logo.png'); /* Tempatkan logo di sini */
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-}
 
 /* Home Section */
 .home-page {
@@ -148,42 +102,119 @@ a#home-a:hover {
     left: 10px;
 }
 
-/* Profile Section */
+/* Profile Section Styling */
 .profile-page {
-    background-color: #1f1f1f;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.profile-page h1 {
-    font-size: 40px;
-    margin-bottom: 40px;
-    color: #00ffcc;
-}
-
-.visi-misi {
+    padding: 50px;
+    background-color: #1b1b1b;
+    color: #e5e5e5;
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.visi, .misi {
-    background-color: #121212;
-    padding: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #0d0d0d;
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
-    transition: transform 0.3s;
-}
-
-.visi:hover, .misi:hover {
-    transform: translateY(-10px);
-}
-
-.visi h1, .misi h1 {
-    font-size: 24px;
-    color: #ff00ff;
-}
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  
+  .profile-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Profile Photo */
+  .profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #00f9ff;
+    transition: transform 0.5s ease, border 0.5s ease;
+  }
+  
+  .profile-photo img:hover {
+    transform: rotate(360deg);
+    border-color: #e5e5e5;
+  }
+  
+  /* Profile Info */
+  .profile-info {
+    margin-left: 40px;
+  }
+  
+  .profile-name {
+    font-size: 2.5rem;
+    color: #00f9ff;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-name::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #00f9ff;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .profile-name:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .visi h2, .misi h2 {
+    color: #00f9ff;
+    font-size: 1.8rem;
+  }
+  
+  .visi p, .misi ol {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  .misi ol li {
+    margin-bottom: 10px;
+  }
+  
+  .visi p {
+    transition: color 0.5s ease;
+  }
+  
+  .visi:hover p {
+    color: #00f9ff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .profile-photo img {
+      margin-bottom: 20px;
+    }
+  
+    .profile-info {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  
 
 /* Portfolio Section */
 /* Portofolio Section */
@@ -443,3 +474,82 @@ a#home-a:hover {
         stroke-dashoffset: 0;
     }
 }
+
+/* Global Body Style */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b;
+    color: #e5e5e5;
+  }
+  
+  /* Header Style */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #0d0d0d;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  /* Logo Style */
+  .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .logo img:hover {
+    transform: rotate(360deg); /* Rotate effect on hover */
+  }
+  
+  /* Navbar Style */
+  .navbar a {
+    text-decoration: none;
+    color: #e5e5e5;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #00f9ff;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover {
+    color: #00f9ff;
+  }
+  
+  .navbar a:hover::before {
+    visibility: visible;
+    width: 100%;
+  }
+  
+  /* Scroll Effect on Header */
+  .header.scrolled {
+    background-color: #1b1b1b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Smooth Transition */
+  * {
+    scroll-behavior: smooth;
+  }
+  
